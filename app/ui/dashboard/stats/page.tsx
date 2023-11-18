@@ -1,11 +1,17 @@
 "use client";
 
 import React from "react";
-import Words from "./words/page";
-import Select from "./select/page";
-import Card from "./card/page";
-
-const data = [
+import Words from "../words/page";
+import Select from "../select/page";
+import { Mycard } from "../mycard/card";
+type dataType = {
+  id: string;
+  number: string;
+  photo: string;
+  color: string;
+  textColor: string;
+}[];
+const data: dataType = [
   {
     id: "1",
     number: "32",
@@ -44,7 +50,7 @@ const Stats = () => {
       </div>
       <div className="grid grid-cols-4 gap-4">
         {data.map((d) => (
-          <Card
+          <Mycard
             key={d.id}
             number={d.number}
             textColor={d.textColor}

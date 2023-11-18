@@ -1,14 +1,17 @@
-"use client";
-import React, { FC } from "react";
 import Image from "next/image";
-const Card: FC<{
-  key: string;
+
+interface MyComponentProps {
   number: string;
   photo: string;
   textColor: string;
   color: string;
-}> = ({ number, photo, color, textColor }) => {
-  console.log(number, photo, color, textColor);
+}
+export const Mycard = ({
+  number,
+  photo,
+  color,
+  textColor,
+}: MyComponentProps) => {
   return (
     <div
       style={{ backgroundColor: `${color}`, color: `${textColor}` }}
@@ -34,5 +37,3 @@ const Card: FC<{
     </div>
   );
 };
-
-export default Card;
