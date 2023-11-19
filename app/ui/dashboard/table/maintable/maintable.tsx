@@ -1,5 +1,6 @@
 import React from "react";
 import Tabledata from "./tabledata/tabledata";
+import { usePathname } from "next/navigation";
 const data = [
   {
     id: "1",
@@ -11,6 +12,7 @@ const data = [
     amount: "GH₵ 63.00",
     statusColor: "#FDD6C166",
     status: "delivered",
+    orderpic: "/pinkbag.png",
   },
   {
     id: "2",
@@ -22,6 +24,7 @@ const data = [
     amount: "GH₵ 63.00",
     statusColor: "#D2FADB66",
     status: "pending",
+    orderpic: "/pinkbag.png",
   },
   {
     id: "3",
@@ -33,6 +36,7 @@ const data = [
     amount: "GH₵ 63.00",
     statusColor: "#AFC9FD66",
     status: "on delivery",
+    orderpic: "/pinkbag.png",
   },
   {
     id: "4",
@@ -44,6 +48,7 @@ const data = [
     amount: "GH₵ 63.00",
     statusColor: "#D2FADB66",
     status: "cancelled",
+    orderpic: "/pinkbag.png",
   },
   {
     id: "5",
@@ -55,6 +60,7 @@ const data = [
     amount: "GH₵ 63.00",
     statusColor: "#FDD6C166",
     status: "pending",
+    orderpic: "/pinkbag.png",
   },
   {
     id: "6",
@@ -66,18 +72,24 @@ const data = [
     amount: "GH₵ 63.00",
     statusColor: "#AFC9FD66",
     status: "delivered",
+    orderpic: "/pinkbag.png",
   },
 ];
 
 const MainTable = () => {
+  const pathanme = usePathname();
   return (
     <div>
-      <table className="text-sm  w-full">
+      <table className="text-sm  w-full ">
         <thead>
-          <tr className="border-b-2 font-bold border-gray-400">
+          <tr className="border-b-2 font-bold  border-gray-400">
             <td>#</td>
             <td>Date</td>
-            <td>Order No.</td>
+            {pathanme === "/admin/products" ? (
+              <td className="indent-10">Image</td>
+            ) : (
+              <td>Order No.</td>
+            )}
             <td>Name</td>
             <td>Number</td>
             <td>Address</td>
@@ -98,6 +110,7 @@ const MainTable = () => {
               amount={d.amount}
               statusColor={d.statusColor}
               status={d.status}
+              orderpic={d.orderpic}
             />
           ))}
         </tbody>

@@ -1,4 +1,9 @@
+"use client";
 import React from "react";
+import { useContext } from "react";
+import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
+import { usePathname } from "next/navigation";
+import Poductpic from "./productpic/productpic";
 type tablerowType = {
   index: string;
   date: string;
@@ -9,6 +14,7 @@ type tablerowType = {
   amount: string;
   statusColor: string;
   status: string;
+  orderpic: string;
 };
 
 const Tabledata = ({
@@ -21,14 +27,27 @@ const Tabledata = ({
   amount,
   statusColor,
   status,
+  orderpic,
 }: tablerowType) => {
+  const pathname = usePathname();
+  const ctx = useContext(ModalContext);
+
   return (
-    <tr className="text-xs border-b-2  border-gray-100">
+    <tr
+      className="text-xs border-b-2 even:bg-black/5 cursor-grab border-gray-100"
+      onClick={() => ctx.visibletrue()}
+    >
       <td>
         <p className="p-4 ">{index}</p>
       </td>
       <td>{date}</td>
-      <td>{orderId}</td>
+      {pathname !== "/admin/products" ? (
+        <td>{orderId}</td>
+      ) : (
+        <td>
+          <Poductpic />
+        </td>
+      )}
       <td>{customer}</td>
       <td>{phone}</td>
       <td>{address}</td>

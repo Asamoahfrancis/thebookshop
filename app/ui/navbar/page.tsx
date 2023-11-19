@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Navbar = () => {
   return (
-    <div className="w-full bg-white px-24 py-2 items-center  flex ">
+    <div className="w-full  bg-white px-24 mb-8 sticky top-0 py-2 items-center border drop-shadow-xl flex ">
       <section className=" flex-auto">
         <div className="relative">
           <Image
@@ -19,7 +19,7 @@ const Navbar = () => {
         <ul className="flex  justify-around">
           <li>
             <Link
-              href="#"
+              href="/admin/dashboard"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Dashboard
@@ -27,7 +27,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="#"
+              href="/admin/orders"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Orders
@@ -38,12 +38,12 @@ const Navbar = () => {
               href="#"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
-              Chart
+              Chat
             </Link>
           </li>
           <li>
             <Link
-              href="#"
+              href="/admin/products"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Products

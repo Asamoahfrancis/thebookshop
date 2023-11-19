@@ -1,6 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Colorbutton from "./colorButton/colorbutton";
 const Tableheader = () => {
+  const pathname = usePathname();
   return (
     <div className=" flex  items-center pb-4 justify-between ">
       <section className="flex-auto  items-center flex gap-4   py-4">
@@ -47,6 +51,8 @@ const Tableheader = () => {
             <option value="">Today</option>
             <option value="">Today</option>
           </select>
+
+          {pathname === "/admin/products" && <Colorbutton />}
         </div>
       </section>
     </div>
