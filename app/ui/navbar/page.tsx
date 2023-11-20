@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="w-full  bg-white px-24 mb-8 sticky top-0 py-2 items-center border drop-shadow-xl flex ">
       <section className=" flex-auto">
-        <div className="relative">
+        <Link href="/admin/dashboard" className="relative">
           <Image
             src="/logo.png"
             width={500}
@@ -13,7 +13,7 @@ const Navbar = () => {
             alt="Picture of the author"
             className="h-20 w-32"
           />
-        </div>
+        </Link>
       </section>
       <section className="flex-auto ">
         <ul className="flex  justify-around">
@@ -35,7 +35,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="#"
+              href="/admin/messaging"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Chat
@@ -51,7 +51,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="#"
+              href="/"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Logout

@@ -10,7 +10,7 @@ const Orders = () => {
   return (
     <div className="bg-white  rounded-md px-6 py-3">
       <section className="absolute top-0 left-0 w-full">
-        {ctx.isVisible && <Orderdetails />}
+        {ctx.isclose && <Orderdetails />}
       </section>
       <div>
         <Tableheader />
