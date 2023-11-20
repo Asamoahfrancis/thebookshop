@@ -1,6 +1,6 @@
 import React from "react";
 import Editcategories from "./editcatigories/editcategories";
-const Productmode = () => {
+const Addcategories = () => {
   return (
     <div className="text-xs py-10 ">
       <h1 className="text-center text-base">Create Category</h1>
@@ -42,4 +42,4 @@ const Productmode = () => {
   );
 };
 
-export default Productmode;
+export default Addcategories;

@@ -32,13 +32,17 @@ const Tabledata = ({
   const pathname = usePathname();
   const ctx = useContext(ModalContext);
 
+  const onhandlertable = () => {
+    ctx.closepage();
+    ctx.oderdetails();
+  };
   return (
     <tr
       className="text-xs border-b-2 even:bg-black/5 cursor-grab border-gray-100"
-      onClick={() => ctx.visibletrue()}
+      onClick={onhandlertable}
     >
       <td>
-        <p className="p-4 ">{index}</p>
+        <p className="p-4">{index}</p>
       </td>
       <td>{date}</td>
       {pathname !== "/admin/products" ? (

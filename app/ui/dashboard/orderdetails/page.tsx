@@ -1,22 +1,25 @@
 "use client";
 import React, { useContext } from "react";
-import Actual from "./oderactual/actual";
-import OrderInfo from "./orderinfo/info";
-import Orderfooter from "./orderfooter/orderfooter";
+
 import Image from "next/image";
 import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
-import { usePathname } from "next/navigation";
-import Productmode from "./productmodal/productmode";
+import Addbanner from "./addcategories/addbanner/addbanner";
+import Detailspage from "./addcategories/detailspage/detailspage";
+import Addcategories from "./addcategories/addcategories";
+import Addproduct from "./addcategories/addproducts/addproduct";
 const Orderdetails = () => {
-  const pathname = usePathname();
   const ctx = useContext(ModalContext);
 
   const handleclick = () => {
-    ctx.visiblefalse();
+    ctx.closepage();
   };
   return (
-    <div className={` w-full bg-black/60 py-10 pb-40 min-h-[980px]  z-[100] `}>
-      <div className="w-full rounded-lg relative  bg-white  px-14 max-w-[590px] mx-auto">
+    <div className={` w-full bg-black/60 py-10 pb-40 min-h-[700px]  z-[100] `}>
+      <div
+        className={`w-full rounded-lg relative  bg-white  px-14 ${
+          ctx.isproduct ? "w-[80%]" : "max-w-[590px]"
+        }  mx-auto`}
+      >
         <div className={`absolute top-2 right-2`} onClick={handleclick}>
           <Image
             src="/close-circle.png"
@@ -25,20 +28,17 @@ const Orderdetails = () => {
             height={24}
           />
         </div>
-        {pathname == "/admin/products" ? (
-          <Productmode />
+
+        {ctx.isdetail ? (
+          <Detailspage />
+        ) : ctx.iscategory ? (
+          <Addcategories />
+        ) : ctx.isbanner ? (
+          <Addbanner />
+        ) : ctx.isproduct ? (
+          <Addproduct />
         ) : (
-          <>
-            <section className="flex  items-center justify-center">
-              <Actual />
-            </section>
-            <section>
-              <OrderInfo />
-            </section>
-            <section className="flex items-center justify-center">
-              <Orderfooter />
-            </section>
-          </>
+          <Detailspage />
         )}
       </div>
     </div>

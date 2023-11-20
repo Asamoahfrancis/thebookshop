@@ -4,7 +4,7 @@ import MainTable from "./maintable/maintable";
 
 const Table = () => {
   return (
-    <div className="bg-white min-h-[400px]  rounded-md px-6 py-3">
+    <div className="bg-white min-h-[800px]  rounded-md px-6 py-3">
       <div>
         <Tableheader />
       </div>

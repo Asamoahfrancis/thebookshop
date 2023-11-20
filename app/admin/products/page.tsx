@@ -10,9 +10,9 @@ const Products = () => {
   const ctx = useContext(ModalContext);
   return (
     <>
-      <div className="bg-white min-h-[400px]  rounded-md px-6 py-3">
+      <div className="bg-white min-h-[1000px]  rounded-md px-6 py-3">
         <section className="absolute top-0 left-0 w-full">
-          {ctx.isVisible && <Orderdetails />}
+          {ctx.isclose && <Orderdetails />}
         </section>
         <div>
           <Tableheader />

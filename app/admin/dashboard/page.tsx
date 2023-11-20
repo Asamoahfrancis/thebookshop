@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <div className="py-10 px-8  m-2">
       <section className="absolute top-0 left-0 w-full">
-        {ctx.isVisible && <Orderdetails />}
+        {ctx.isclose && <Orderdetails />}
       </section>
       <div>
         <Stats />
