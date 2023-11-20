@@ -19,7 +19,7 @@ function Orderfooter() {
       </div>
       <button
         className="mb-4  text-white bg-black rounded-full py-1 px-12"
-        onClick={() => ctx.visiblefalse()}
+        onClick={() => ctx.closepage()}
       >
         Done
       </button>
