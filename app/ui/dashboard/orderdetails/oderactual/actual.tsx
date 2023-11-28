@@ -12,6 +12,9 @@ function Actual() {
               alt="Picture of the author"
               width={200}
               height={200}
+              style={{
+                clipPath: "ellipse(52% 34% at 52% 8%)",
+              }}
             />
           </div>
           <div className="flex flex-col justify-center items-start text-sm">

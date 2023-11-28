@@ -81,7 +81,7 @@ const MainTable = () => {
   return (
     <div>
       <table className="text-sm  w-full ">
-        <thead>
+        <thead className="hidden md:table-header-group">
           <tr className="border-b-2 font-bold  border-gray-400">
             <td>#</td>
             <td>Date</td>
@@ -97,7 +97,7 @@ const MainTable = () => {
             <td>Status</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="grid md:table-header-group grid-cols-1 sm:grid-cols-2 gap-4 rounded-md">
           {data.map((d) => (
             <Tabledata
               key={d.id}

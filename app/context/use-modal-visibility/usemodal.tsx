@@ -10,6 +10,8 @@ export const ModalContext = React.createContext({
   addbanner: () => {},
   addproduct: () => {},
   closepage: () => {},
+  closeMobile: () => {},
+  isMoblie: false,
   isclose: false,
   isdetail: false,
   iscategory: false,
@@ -24,11 +26,16 @@ export const ModalContextProvider = ({
   const [iscategory, catevalid] = useState(false);
   const [isbanner, setbanner] = useState(false);
   const [isdetail, setdetails] = useState(false);
+  const [ismobile, setmobile] = useState(false);
 
   const [isclose, setclose] = useState(false);
 
   const closepage = () => {
     setclose((prev) => (prev === isclose ? !isclose : isclose));
+  };
+
+  const closeMobile = () => {
+    setmobile((prev) => (prev === ismobile ? !ismobile : ismobile));
   };
   const addcategory = () => {
     setproductvalid(false);
@@ -63,6 +70,8 @@ export const ModalContextProvider = ({
         addbanner: addbanner,
         addproduct: addproduct,
         closepage: closepage,
+        closeMobile: closeMobile,
+        isMoblie: ismobile,
         isclose: isclose,
         isdetail: isdetail,
         iscategory: iscategory,

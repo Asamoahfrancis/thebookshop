@@ -14,10 +14,10 @@ const Orderdetails = () => {
     ctx.closepage();
   };
   return (
-    <div className={` w-full bg-black/60 py-10 pb-40 min-h-[700px]  z-[100] `}>
+    <div className={` w-full bg-black/60 py-10 pb-40 min-h-screen  z-[100] `}>
       <div
         className={`w-full rounded-lg relative  bg-white  px-14 ${
-          ctx.isproduct ? "w-[70%]" : "max-w-[590px]"
+          ctx.isproduct ? "minwidth" : "max-w-[590px]"
         }  mx-auto`}
       >
         <div className={`absolute top-2 right-2`} onClick={handleclick}>

@@ -6,8 +6,8 @@ import Colorbutton from "./colorButton/colorbutton";
 const Tableheader = () => {
   const pathname = usePathname();
   return (
-    <div className=" flex  items-center pb-4 justify-between ">
-      <section className="flex-auto  items-center flex gap-4   py-4">
+    <div className=" md:flex  items-center  md:items-center pb-4   ">
+      <section className="flex-auto   items-center flex gap-4    py-4">
         <p className="text-sm font-bold text-gray-500">Todays</p>
         <div className="flex  flex-auto  ">
           <input
@@ -29,31 +29,20 @@ const Tableheader = () => {
           </button>
         </div>
       </section>
-      <section className="flex text-xs justify-end gap-4 flex-auto ">
-        <div>
-          <p>Period</p>
-          <select
-            name=""
-            id=""
-            className="px-8 bg-[#F0F0FA]  py-2  rounded-md "
-          >
-            <option value="">Today</option>
-            <option value="">Today</option>
-            <option value="">Today</option>
-            <option value="">Today</option>
-          </select>
-        </div>
-        <div>
-          <p>Period</p>
-          <select name="" id="" className="px-8 bg-[#F0F0FA] py-2  rounded-md ">
-            <option value="">Today</option>
-            <option value="">Today</option>
-            <option value="">Today</option>
-            <option value="">Today</option>
-          </select>
-
-          {pathname === "/admin/products" && <Colorbutton />}
-        </div>
+      <section className="grid   text-xs  gap-4 sm:grid-cols-5 md:grid-cols-3  flex-auto ">
+        <select name="" id="" className="px-8 bg-[#F0F0FA] py-2   rounded-md ">
+          <option value="">Select the Period</option>
+          <option value="">Today</option>
+          <option value="">Today</option>
+          <option value="">Today</option>
+        </select>
+        <select name="" id="" className="px-8 bg-[#F0F0FA]  py-2  rounded-md ">
+          <option value="">Select the Period</option>
+          <option value="">Today</option>
+          <option value="">Today</option>
+          <option value="">Today</option>
+        </select>
+        {pathname === "/products" && <Colorbutton />}
       </section>
     </div>
   );

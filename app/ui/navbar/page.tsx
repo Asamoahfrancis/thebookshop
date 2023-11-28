@@ -1,25 +1,37 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdDashboard } from "react-icons/md";
+import { useContext } from "react";
+import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
 const Navbar = () => {
+  const ctx = useContext(ModalContext);
   return (
-    <div className="w-full  bg-white px-24 mb-8 sticky top-0 py-2 items-center border drop-shadow-xl flex ">
-      <section className=" flex-auto">
-        <Link href="/admin/dashboard" className="relative">
+    <div className="w-full  bg-white md:px-24 px-6 md:mb-8 sticky top-0 md:py-2 items-center  drop-shadow-xl flex   ">
+      <section
+        className="text-pink-600 md:hidden"
+        onClick={() => ctx.closeMobile()}
+      >
+        <MdDashboard size={"2.5em"} />
+      </section>
+      <section className=" flex-auto md:flex-none flex justify-center items-center">
+        <Link href="/" className="relative ">
           <Image
             src="/logo.png"
             width={500}
             height={500}
             alt="Picture of the author"
-            className="h-20 w-32"
+            className="h-20 w-32 "
           />
         </Link>
       </section>
-      <section className="flex-auto ">
+
+      <section className="flex-auto hidden md:block">
         <ul className="flex  justify-around">
           <li>
             <Link
-              href="/admin/dashboard"
+              href="/"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Dashboard
@@ -27,7 +39,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/admin/orders"
+              href="/orders"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Orders
@@ -35,7 +47,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/admin/messaging"
+              href="/messaging"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Chat
@@ -43,7 +55,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/admin/products"
+              href="/products"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Products

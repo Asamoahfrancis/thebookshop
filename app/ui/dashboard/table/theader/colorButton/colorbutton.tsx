@@ -25,7 +25,7 @@ const Colorbutton = () => {
         Add Product
       </button>
       <button
-        className=" px-8  py-2 text-white  ml-4 rounded-md  bg-[#000]"
+        className=" px-8  py-2 text-white  ml-4  rounded-md  bg-[#000]"
         onClick={handlercategories}
       >
         Add Categoty
