@@ -9,12 +9,12 @@ const Navbar = () => {
   const ctx = useContext(ModalContext);
   return (
     <div className="w-full  bg-white md:px-24 px-6 md:mb-8 sticky top-0 md:py-2 items-center  drop-shadow-xl flex   ">
-      <section
+      <button
         className="text-pink-600 md:hidden"
         onClick={() => ctx.closeMobile()}
       >
         <MdDashboard size={"2.5em"} />
-      </section>
+      </button>
       <section className=" flex-auto md:flex-none flex justify-center items-center">
         <Link href="/" className="relative ">
           <Image

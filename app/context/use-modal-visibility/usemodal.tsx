@@ -35,6 +35,7 @@ export const ModalContextProvider = ({
   };
 
   const closeMobile = () => {
+    console.log("clicked....");
     setmobile((prev) => (prev === ismobile ? !ismobile : ismobile));
   };
   const addcategory = () => {

@@ -16,10 +16,10 @@ const Mobilelinks = () => {
         <IoIosCloseCircle size={"2.5em"} />
       </div>
       <section className="[&>div]:text-center [&>div]:text-pink-400 [&>div]:text-xl [&>div]:font-bold [&>div]:border-b-2 [&>div]:border-b-pink-300  hover:[&>div]:bg-pink-500 hover:[&>div]:text-[#F0F0FA] [&>div]:p-6 pt-10">
-        <div>
+        <div onClick={() => ctx.closeMobile()}>
           <Link href="/"> Dashboard</Link>
         </div>
-        <div>
+        <div onClick={() => ctx.closeMobile()}>
           <Link href="/orders"> Orders</Link>
         </div>
         <div>
