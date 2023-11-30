@@ -5,10 +5,14 @@ import Link from "next/link";
 import { MdDashboard } from "react-icons/md";
 import { useContext } from "react";
 import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
+import Mobilelinks from "./mobilelinks/mobilelinks";
 const Navbar = () => {
   const ctx = useContext(ModalContext);
   return (
     <div className="w-full  bg-white md:px-24 px-6 md:mb-8 sticky top-0 md:py-2 items-center  flex   ">
+      <section className="absolute top-0 left-0 w-full">
+        {ctx.isMoblie && <Mobilelinks />}
+      </section>
       <button
         className="text-pink-600 md:hidden"
         onClick={() => ctx.closeMobile()}

@@ -8,9 +8,9 @@ import Orderdetails from "@/app/ui/dashboard/orderdetails/page";
 const Orders = () => {
   const ctx = useContext(ModalContext);
   return (
-    <div className="bg-white  rounded-md px-6 py-3">
+    <div className="bg-white border  rounded-md px-6 py-3">
       <section className="absolute top-0 left-0 w-full">
-        {ctx.isclose && <Orderdetails />}
+        {/* {ctx.isclose && <Orderdetails />} */}
       </section>
       <div>
         <Tableheader />

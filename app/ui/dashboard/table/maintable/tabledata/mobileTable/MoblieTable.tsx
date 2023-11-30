@@ -22,7 +22,7 @@ const MoblieTable = ({
   status: string;
 }) => {
   return (
-    <div className=" [&>div]:p-2 text-sm bg-[#F0F0FA] rounded-md">
+    <div className="p-4 [&>div]:p-2 text-sm bg-[#F0F0FA] md:hidden rounded-md">
       <div className="flex justify-between">
         Index : <span>{index}</span>
       </div>

@@ -11,7 +11,6 @@ const Dashboard = () => {
   return (
     <div className=" md:px-8  m-2">
       <section className="absolute top-0 left-0 w-full">
-        {ctx.isMoblie && <Mobilelinks />}
         {ctx.isclose && <Orderdetails />}
       </section>
       <div>

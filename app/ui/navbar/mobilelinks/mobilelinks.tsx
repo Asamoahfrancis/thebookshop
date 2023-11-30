@@ -8,7 +8,7 @@ import { IoIosCloseCircle } from "react-icons/io";
 const Mobilelinks = () => {
   const ctx = useContext(ModalContext);
   return (
-    <div className="w-full min-h-screen bg-[#F0F0FA] md:hidden">
+    <div className="w-full fixed min-h-screen z-[1000]  bg-[#F0F0FA] md:hidden">
       <div
         className={`absolute top-2 right-2`}
         onClick={() => ctx.closeMobile()}
@@ -22,14 +22,14 @@ const Mobilelinks = () => {
         <div onClick={() => ctx.closeMobile()}>
           <Link href="/orders"> Orders</Link>
         </div>
-        <div>
+        <div onClick={() => ctx.closeMobile()}>
           <Link href="/messaging"> Chat</Link>
         </div>
-        <div>
+        <div onClick={() => ctx.closeMobile()}>
           <Link href="/products"> Products</Link>
         </div>
-        <div>
-          <Link href="/logout"> Logout</Link>
+        <div onClick={() => ctx.closeMobile()}>
+          <Link href="/"> Logout</Link>
         </div>
       </section>
     </div>

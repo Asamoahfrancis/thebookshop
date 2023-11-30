@@ -43,8 +43,8 @@ const data: dataType = [
 ];
 const Stats = () => {
   return (
-    <div className="bg-white py-4  rounded-md px-6">
-      <div className="flex mb-3">
+    <div className="bg-white py-4  rounded-md md:px-6 px-3">
+      <div className="flex  mb-3">
         <Words />
         <Select />
       </div>
