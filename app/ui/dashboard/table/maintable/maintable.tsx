@@ -1,6 +1,7 @@
 import React from "react";
 import Tabledata from "./tabledata/tabledata";
 import { usePathname } from "next/navigation";
+import MoblieTable from "./tabledata/mobileTable/MoblieTable";
 const data = [
   {
     id: "1",
@@ -80,7 +81,7 @@ const MainTable = () => {
   const pathanme = usePathname();
   return (
     <div>
-      <table className="text-sm  w-full ">
+      <table className=" md:table hidden text-sm  w-full ">
         <thead className="hidden md:table-header-group">
           <tr className="border-b-2 font-bold  border-gray-400">
             <td>#</td>
@@ -115,6 +116,22 @@ const MainTable = () => {
           ))}
         </tbody>
       </table>
+      <section className="grid grid-cols-1 sm:grid-cols-2  gap-4 ">
+        {data.map((d) => (
+          <MoblieTable
+            key={d.id}
+            index={d.id}
+            date={d.date}
+            orderId={d.orderId}
+            customer={d.customer}
+            phone={d.phone}
+            address={d.address}
+            amount={d.amount}
+            statusColor={d.statusColor}
+            status={d.status}
+          />
+        ))}{" "}
+      </section>
     </div>
   );
 };

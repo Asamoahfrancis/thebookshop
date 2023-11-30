@@ -9,7 +9,7 @@ import Mobilelinks from "../ui/navbar/mobilelinks/mobilelinks";
 const Dashboard = () => {
   const ctx = useContext(ModalContext);
   return (
-    <div className="md:py-10 md:px-8  m-2">
+    <div className=" md:px-8  m-2">
       <section className="absolute top-0 left-0 w-full">
         {ctx.isMoblie && <Mobilelinks />}
         {ctx.isclose && <Orderdetails />}

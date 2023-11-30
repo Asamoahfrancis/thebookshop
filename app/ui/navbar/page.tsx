@@ -8,7 +8,7 @@ import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
 const Navbar = () => {
   const ctx = useContext(ModalContext);
   return (
-    <div className="w-full  bg-white md:px-24 px-6 md:mb-8 sticky top-0 md:py-2 items-center  drop-shadow-xl flex   ">
+    <div className="w-full  bg-white md:px-24 px-6 md:mb-8 sticky top-0 md:py-2 items-center  flex   ">
       <button
         className="text-pink-600 md:hidden"
         onClick={() => ctx.closeMobile()}

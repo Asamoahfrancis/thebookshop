@@ -46,7 +46,7 @@ const Tabledata = ({
           <p className="p-4">{index}</p>
         </td>
         <td>{date}</td>
-        {pathname !== "/admin/products" ? (
+        {pathname !== "/products" ? (
           <td>{orderId}</td>
         ) : (
           <td>
@@ -66,47 +66,6 @@ const Tabledata = ({
           </p>
         </td>
       </tr>
-
-      <div
-        className="md:hidden  p-4 text-base [&>p]:py-2 border-b-2 even:bg-black/5 cursor-grab  border-gray-100"
-        onClick={onhandlertable}
-      >
-        <p>
-          <b className="text-bold">Index</b> : {index}
-        </p>
-        <p>
-          <b>Date</b> : {date}
-        </p>
-        {pathname !== "/admin/products" ? (
-          <p>
-            <b>OrderNo</b> : {orderId}
-          </p>
-        ) : (
-          <p>
-            <Poductpic />
-          </p>
-        )}
-        <p>
-          <b>Name</b> : {customer}
-        </p>
-        <p>
-          <b>Phone</b> : {phone}
-        </p>
-        <p>
-          <b>Address</b> : {address}
-        </p>
-        <p>
-          <b>Amount</b> : {amount}
-        </p>
-        <p className=" text-center">
-          <p
-            className=" rounded-md px-3 py-2"
-            style={{ backgroundColor: statusColor }}
-          >
-            <b>Status</b> : {status}
-          </p>
-        </p>
-      </div>
     </>
   );
 };
