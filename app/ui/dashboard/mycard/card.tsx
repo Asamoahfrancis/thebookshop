@@ -1,16 +1,18 @@
 import Image from "next/image";
 
 interface MyComponentProps {
-  number: string;
+  statnumber: string | number;
   photo: string;
   textColor: string;
   color: string;
+  text: string;
 }
 export const Mycard = ({
-  number,
+  statnumber,
   photo,
   color,
   textColor,
+  text,
 }: MyComponentProps) => {
   return (
     <div
@@ -18,7 +20,7 @@ export const Mycard = ({
       className={` h-[200px] p-6 rounded-md  flex flex-col`}
     >
       <div className="flex justify-between px-4 mb-auto">
-        <section className={`text-4xl  font-bold`}>{number}</section>
+        <section className={`text-4xl  font-bold`}>{statnumber}</section>
         <section>
           <div>
             <Image
@@ -32,7 +34,7 @@ export const Mycard = ({
         </section>
       </div>
       <div>
-        <p className="font-[500]">Orders</p>
+        <p className="font-[500]">{text}</p>
       </div>
     </div>
   );

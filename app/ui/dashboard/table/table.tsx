@@ -1,5 +1,5 @@
 import React from "react";
-import Tableheader from "./theader/page";
+import Tableheader from "./theader/theader";
 import MainTable from "./maintable/maintable";
 
 const Table = () => {

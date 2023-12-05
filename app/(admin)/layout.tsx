@@ -1,5 +1,5 @@
-import Footer from "../ui/footer/page";
-import Navbar from "../ui/navbar/page";
+import Footer from "../ui/footer/footer";
+import Navbar from "../ui/navbar/navbar";
 
 export default function RootLayout({
   children,

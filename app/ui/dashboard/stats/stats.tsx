@@ -1,44 +1,51 @@
 "use client";
 
 import React from "react";
-import Words from "../words/page";
-import Select from "../select/page";
+import Words from "../words/word";
+import Select from "../select/select";
 import { Mycard } from "../mycard/card";
+import { myOrder } from "@/app/data/orders";
+
 type dataType = {
   id: string;
-  number: string;
+  statnumber: string | number;
   photo: string;
   color: string;
   textColor: string;
+  text: string;
 }[];
 const data: dataType = [
   {
     id: "1",
-    number: "32",
+    statnumber: myOrder.length,
     photo: "/bag.png",
     color: "#D9C7F066",
     textColor: "#6721C1",
+    text: "Orders",
   },
   {
     id: "2",
-    number: "12",
+    statnumber: "12",
     photo: "/messages.png",
     color: "#FDD6C166",
     textColor: "#DB6322",
+    text: "Issues",
   },
   {
     id: "3",
-    number: "4",
+    statnumber: "4",
     photo: "/additem.png",
     color: "#AFC9FD66",
     textColor: "#004CE0",
+    text: "Low on stock",
   },
   {
     id: "4",
-    number: "2,345",
+    statnumber: "2,345",
     photo: "/empty-wallet.png",
     color: "#D2FADB66",
     textColor: "#099528",
+    text: "Total",
   },
 ];
 const Stats = () => {
@@ -52,10 +59,11 @@ const Stats = () => {
         {data.map((d) => (
           <Mycard
             key={d.id}
-            number={d.number}
+            statnumber={d.statnumber}
             textColor={d.textColor}
             photo={d.photo}
             color={d.color}
+            text={d.text}
           />
         ))}
       </div>

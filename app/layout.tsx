@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { ModalContextProvider } from "@/app/context/use-modal-visibility/usemodal";
-
+import { ProductContextProvider } from "./context/ProductsContext/ProductContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ModalContextProvider>{children} </ModalContextProvider>
+        <ModalContextProvider>
+          <ProductContextProvider>{children}</ProductContextProvider>
+        </ModalContextProvider>
       </body>
     </html>
   );

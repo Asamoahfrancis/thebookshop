@@ -4,17 +4,22 @@ import { useContext } from "react";
 import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
 import { usePathname } from "next/navigation";
 import Poductpic from "./productpic/productpic";
+import EditButtons from "../../EditButtons/EditButtons";
 type tablerowType = {
-  index: string;
-  date: string;
-  orderId: string;
-  customer: string;
-  phone: string;
-  address: string;
-  amount: string;
-  statusColor: string;
-  status: string;
-  orderpic: string;
+  index?: string;
+  date?: string;
+  orderId?: string;
+  customer?: string;
+  phone?: string;
+  address?: string;
+  amount?: string;
+  statusColor?: string;
+  status?: string;
+  orderpic?: string;
+  Product_Category?: string;
+  Product_name?: string;
+  Cost?: string;
+  Stock?: string;
 };
 
 const Tabledata = ({
@@ -27,6 +32,10 @@ const Tabledata = ({
   amount,
   statusColor,
   status,
+  Product_Category,
+  Product_name,
+  Cost,
+  Stock,
   orderpic,
 }: tablerowType) => {
   const pathname = usePathname();
@@ -53,17 +62,33 @@ const Tabledata = ({
             <Poductpic />
           </td>
         )}
-        <td>{customer}</td>
-        <td>{phone}</td>
-        <td>{address}</td>
-        <td>{amount}</td>
+        {pathname !== "/products" ? (
+          <>
+            <td>{customer}</td>
+            <td>{phone}</td>
+            <td>{address}</td>
+            <td>{amount}</td>
+          </>
+        ) : (
+          <>
+            <td>{Product_Category}</td>
+            <td>{Product_name}</td>
+            <td>{Cost}</td>
+            <td>{Stock}</td>
+          </>
+        )}
+
         <td className=" text-center">
-          <p
-            className=" rounded-md px-3 py-2"
-            style={{ backgroundColor: statusColor }}
-          >
-            {status}
-          </p>
+          {pathname === "/products" ? (
+            <EditButtons />
+          ) : (
+            <p
+              className=" rounded-md px-3 py-2"
+              style={{ backgroundColor: statusColor }}
+            >
+              {status}
+            </p>
+          )}
         </td>
       </tr>
     </>

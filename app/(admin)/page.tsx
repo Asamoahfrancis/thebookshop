@@ -1,11 +1,10 @@
 "use client";
 
-import Stats from "@/app/ui/dashboard/stats/page";
-import Table from "@/app/ui/dashboard/table/page";
+import Stats from "@/app/ui/dashboard/stats/stats";
+import Table from "@/app/ui/dashboard/table/table";
 import React, { useContext, useState } from "react";
-import Orderdetails from "../ui/dashboard/orderdetails/page";
+import Orderdetails from "../ui/dashboard/orderdetails/orderInfo";
 import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
-import Mobilelinks from "../ui/navbar/mobilelinks/mobilelinks";
 const Dashboard = () => {
   const ctx = useContext(ModalContext);
   return (

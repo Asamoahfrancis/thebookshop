@@ -1,27 +1,21 @@
-import React from "react";
-
-const Editcategories = () => {
+import React, { useState } from "react";
+import Image from "next/image";
+import EditButtons from "../../../table/EditButtons/EditButtons";
+const Editcategories = ({ category }: { category: string }) => {
+  const [getCate, setCate] = useState("");
   return (
     <>
-      <div className=" w-full items-center flex">
+      <div className=" w-full  items-center flex">
         <input
           type="text"
           name=""
           id=""
+          value={category}
           placeholder="Category 1"
-          className=" flex-auto pl-2  bg-white py-2 mr-2 rounded-md"
+          className=" flex-auto p-3  bg-white  mr-2 rounded-md"
+          onChange={(e) => setCate(e.target.value)}
         />
-        <div className="flex items-center gap-2">
-          <button className="  bg-black text-white p-2 rounded-md">
-            Create
-          </button>
-          <button className=" bg-black text-white p-2 rounded-md">
-            Create
-          </button>
-          <button className="  bg-black text-white p-2 rounded-md">
-            Create
-          </button>
-        </div>
+        <EditButtons />
       </div>
     </>
   );

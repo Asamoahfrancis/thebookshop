@@ -47,9 +47,6 @@ const Addbanner = () => {
               id=""
               className="border pl-2  flex-auto py-2 bg-[#F0F0FA]  rounded-md"
             >
-              <option value="">
-                <p>Home x</p>
-              </option>
               <option value="">Today</option>
               <option value="">Today</option>
               <option value="">Today</option>

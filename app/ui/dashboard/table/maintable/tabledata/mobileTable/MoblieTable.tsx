@@ -10,16 +10,26 @@ const MoblieTable = ({
   amount,
   statusColor,
   status,
+  orderpic,
+  Product_Category,
+  Product_name,
+  Cost,
+  Stock,
 }: {
-  index: string;
-  date: string;
-  orderId: string;
-  customer: string;
-  phone: string;
-  address: string;
-  amount: string;
-  statusColor: string;
-  status: string;
+  index?: string;
+  date?: string;
+  orderId?: string;
+  customer?: string;
+  phone?: string;
+  address?: string;
+  amount?: string;
+  statusColor?: string;
+  status?: string;
+  orderpic?: string;
+  Product_Category?: string;
+  Product_name?: string;
+  Cost?: string;
+  Stock?: string;
 }) => {
   return (
     <div className="p-4 [&>div]:p-2 text-sm bg-[#F0F0FA] md:hidden rounded-md">
@@ -38,9 +48,9 @@ const MoblieTable = ({
       <div className="flex justify-between">
         Phone : <span>{phone}</span>
       </div>
-      <div className="w-full   ">
+      <div className="w-full">
         <section className="w-[100%] gap-4 flex justify-between">
-          <p>Address:</p>
+          <p>Address : </p>
           <p className=" flex-auto w-[50%]  text-right">{address}</p>
         </section>
       </div>

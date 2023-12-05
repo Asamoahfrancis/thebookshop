@@ -1,7 +1,7 @@
 "use client";
-import Orderdetails from "@/app/ui/dashboard/orderdetails/page";
+import Orderdetails from "@/app/ui/dashboard/orderdetails/orderInfo";
 import MainTable from "@/app/ui/dashboard/table/maintable/maintable";
-import Tableheader from "@/app/ui/dashboard/table/theader/page";
+import Tableheader from "@/app/ui/dashboard/table/theader/theader";
 import React from "react";
 import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
 import { useContext } from "react";

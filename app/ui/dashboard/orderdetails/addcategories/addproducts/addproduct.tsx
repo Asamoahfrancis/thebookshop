@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { useContext } from "react";
+import { ProductContext } from "@/app/context/ProductsContext/ProductContext";
 const Addproduct = () => {
+  const ctx = useContext(ProductContext);
   return (
     <div className=" text-sm flex py-10 flex-col gap-4">
       <section>
@@ -8,14 +11,12 @@ const Addproduct = () => {
       </section>
       <section>
         <div>
-          <p>Select category</p>
-          <input
-            type="text"
-            name=""
-            placeholder="Type Name"
-            id=""
-            className="w-[40%] pl-2 flex-auto py-2 bg-[#F0F0FA] mr-2 rounded-md"
-          />
+          <select name="" id="" className="  w-[40%] py-2 px-3 rounded-md">
+            <option value="">Select category</option>
+            {ctx.StateCategory.map((cat) => (
+              <option key={cat.id}>{cat.category}</option>
+            ))}
+          </select>
         </div>
       </section>
       <section>
