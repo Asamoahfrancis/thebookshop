@@ -44,27 +44,34 @@ const Tableheader = () => {
           </button>
         </form>
       </section>
-      <section className="grid  text-xs  gap-4 sm:grid-cols-5 md:grid-cols-3  flex-auto ">
-        <select
-          name=""
-          value={ctx.selectSearch}
-          id=""
-          className="px-8 bg-[#F0F0FA]  py-2  rounded-md "
-          onChange={dropdownHandler}
-        >
-          <option value="main">Select Status</option>
-          <option value="Delivered">Delivered</option>
-          <option value="On_delivery">On delivery</option>
-          <option value="Picked_up">Picked up</option>
-          <option value="Pending">Pending</option>
-          <option value="cancelled">cancelled</option>
-        </select>
-        <select name="" id="" className="px-8 bg-[#F0F0FA] py-2   rounded-md ">
-          <option value="">Today</option>
-          <option value="">Tomorrow</option>
-          <option value="">Yesterday</option>
-        </select>
-
+      <section>
+        {pathname !== "/products" && (
+          <div className="grid  text-xs  gap-4 sm:grid-cols-5 md:grid-cols-3  flex-auto ">
+            <select
+              name=""
+              value={ctx.selectSearch}
+              id=""
+              className="px-8 bg-[#F0F0FA]  py-2  rounded-md "
+              onChange={dropdownHandler}
+            >
+              <option value="main">Select Status</option>
+              <option value="Delivered">Delivered</option>
+              <option value="On_delivery">On delivery</option>
+              <option value="Picked_up">Picked up</option>
+              <option value="Pending">Pending</option>
+              <option value="cancelled">cancelled</option>
+            </select>
+            <select
+              name=""
+              id=""
+              className="px-8 bg-[#F0F0FA] py-2   rounded-md "
+            >
+              <option value="">Today</option>
+              <option value="">Tomorrow</option>
+              <option value="">Yesterday</option>
+            </select>
+          </div>
+        )}
         {pathname === "/products" && <Colorbutton />}
       </section>
     </div>

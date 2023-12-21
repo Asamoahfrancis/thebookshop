@@ -3,6 +3,7 @@ import React from "react";
 const MoblieTable = ({
   index,
   date,
+  Pid,
   orderId,
   customer,
   phone,
@@ -18,6 +19,7 @@ const MoblieTable = ({
 }: {
   index?: string;
   date?: string;
+  Pid?: string | undefined;
   orderId?: string;
   customer?: string;
   phone?: string;

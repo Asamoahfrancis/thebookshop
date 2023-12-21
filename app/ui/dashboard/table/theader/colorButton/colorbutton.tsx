@@ -17,9 +17,9 @@ const Colorbutton = () => {
     ctx.addbanner();
   };
   return (
-    <>
+    <div className=" grid grid-cols-1 sm:grid-cols-3 ">
       <button
-        className=" px-8  py-2  text-white ml-4 rounded-md  bg-[#E9088C]"
+        className=" px-8  py-2   text-white ml-4 rounded-md  bg-[#E9088C]"
         onClick={handlerproduct}
       >
         Add Product
@@ -28,7 +28,7 @@ const Colorbutton = () => {
         className=" px-8  py-2 text-white  ml-4  rounded-md  bg-[#000]"
         onClick={handlercategories}
       >
-        Add Categoty
+        Add Category
       </button>
       <button
         className=" px-8  py-2  text-white ml-4 rounded-md  bg-blue-500"
@@ -36,7 +36,7 @@ const Colorbutton = () => {
       >
         Banner
       </button>
-    </>
+    </div>
   );
 };
 

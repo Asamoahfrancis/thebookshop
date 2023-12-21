@@ -15,7 +15,7 @@ const Editcategories = ({ category }: { category: string }) => {
           className=" flex-auto p-3  bg-white  mr-2 rounded-md"
           onChange={(e) => setCate(e.target.value)}
         />
-        <EditButtons />
+        <EditButtons Pid={undefined} />
       </div>
     </>
   );

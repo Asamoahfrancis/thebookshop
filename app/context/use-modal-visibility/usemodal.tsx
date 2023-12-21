@@ -11,12 +11,14 @@ export const ModalContext = React.createContext({
   addproduct: () => {},
   closepage: () => {},
   closeMobile: () => {},
+  editproduct: () => {},
   isMoblie: false,
   isclose: false,
   isdetail: false,
   iscategory: false,
   isproduct: false,
   isbanner: false,
+  isEdit: false,
 });
 
 export const ModalContextProvider = ({
@@ -27,6 +29,7 @@ export const ModalContextProvider = ({
   const [isbanner, setbanner] = useState(false);
   const [isdetail, setdetails] = useState(false);
   const [ismobile, setmobile] = useState(false);
+  const [isEdit, setEdit] = useState(false);
 
   const [isclose, setclose] = useState(false);
 
@@ -35,7 +38,6 @@ export const ModalContextProvider = ({
   };
 
   const closeMobile = () => {
-    console.log("clicked....");
     setmobile((prev) => (prev === ismobile ? !ismobile : ismobile));
     console.log(ismobile);
   };
@@ -44,24 +46,37 @@ export const ModalContextProvider = ({
     catevalid(true);
     setbanner(false);
     setdetails(false);
+    setEdit(false);
   };
   const addproduct = () => {
     setproductvalid(true);
     catevalid(false);
     setbanner(false);
     setdetails(false);
+    setEdit(false);
   };
   const oderdetails = () => {
     setproductvalid(false);
     catevalid(false);
     setbanner(false);
     setdetails(true);
+    setEdit(false);
   };
   const addbanner = () => {
     setproductvalid(false);
     catevalid(false);
     setbanner(true);
     setdetails(false);
+    setEdit(false);
+  };
+
+  const editproduct = () => {
+    console.log("clicked on edit product");
+    setproductvalid(false);
+    catevalid(false);
+    setbanner(false);
+    setdetails(false);
+    setEdit(true);
   };
 
   return (
@@ -73,12 +88,14 @@ export const ModalContextProvider = ({
         addproduct: addproduct,
         closepage: closepage,
         closeMobile: closeMobile,
+        editproduct: editproduct,
         isMoblie: ismobile,
         isclose: isclose,
         isdetail: isdetail,
         iscategory: iscategory,
         isproduct: isproduct,
         isbanner: isbanner,
+        isEdit: isEdit,
       }}
     >
       {children}

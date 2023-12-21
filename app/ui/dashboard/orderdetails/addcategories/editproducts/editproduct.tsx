@@ -5,7 +5,7 @@ import { ProductContext } from "@/app/context/ProductsContext/ProductContext";
 import { useFormik } from "formik";
 import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
 
-const Addproduct = () => {
+const Editproduct = () => {
   const [fileList, setFileList] = useState<File[]>([]);
   const ctx = useContext(ProductContext);
   const ctx1 = useContext(ModalContext);
@@ -47,18 +47,18 @@ const Addproduct = () => {
   });
   return (
     <form
-      className=" text-sm flex py-10 flex-col gap-4"
+      className="text-sm flex py-10 flex-col gap-4"
       onSubmit={formik.handleSubmit}
     >
       <section>
-        <h1 className="text-xl text-gray-400">Add Product</h1>
+        <h1 className="text-xl text-gray-400">Edit Product</h1>
       </section>
       <section>
         <div>
           <select
             name="category"
             id="category"
-            className="  w-[20%] bg-[#F0F0FA] py-2 px-3 rounded-md"
+            className="  w-[40%] py-2 px-3 bg-[#F0F0FA] rounded-md"
             onChange={formik.handleChange}
             value={formik.values.category}
           >
@@ -79,7 +79,7 @@ const Addproduct = () => {
             name="productName"
             placeholder="product name"
             id="productName"
-            className="w-[20%] pl-2 flex-auto py-2 bg-[#F0F0FA] mr-2 rounded-md"
+            className="w-[40%] pl-2 flex-auto py-2 bg-[#F0F0FA] mr-2 rounded-md"
             onChange={formik.handleChange}
             value={formik.values.productName}
           />
@@ -95,7 +95,7 @@ const Addproduct = () => {
             onChange={formik.handleChange}
             value={formik.values.quantity}
             placeholder="30"
-            className="w-[20%] pl-2 flex-auto py-2 bg-[#F0F0FA] mr-2 rounded-md"
+            className="w-[40%] pl-2 flex-auto py-2 bg-[#F0F0FA] mr-2 rounded-md"
           />
         </div>
       </section>
@@ -103,7 +103,7 @@ const Addproduct = () => {
         <select
           name="stock"
           id="stock"
-          className="bg-[#F0F0FA]  w-[20%] py-2 px-3 rounded-md"
+          className="w-[40%] py-2 px-3 bg-[#F0F0FA] rounded-md"
           onChange={formik.handleChange}
           value={formik.values.stock}
         >
@@ -150,9 +150,9 @@ const Addproduct = () => {
             </section>
 
             {fileList.length > 0
-              ? fileList.slice(0, 1).map((filesArray, index) => (
+              ? fileList.map((filesArray, index) => (
                   <section
-                    className=" relative h-[150px] w-[250px] bg-[#F0F0FA] border"
+                    className=" relative h-[150px] w-[150px] bg-[#F0F0FA] border"
                     key={index}
                   >
                     <Image
@@ -225,4 +225,4 @@ const Addproduct = () => {
   );
 };
 
-export default Addproduct;
+export default Editproduct;

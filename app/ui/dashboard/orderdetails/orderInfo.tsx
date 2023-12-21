@@ -7,9 +7,10 @@ import Addbanner from "./addcategories/addbanner/addbanner";
 import Detailspage from "./addcategories/detailspage/detailspage";
 import Addcategories from "./addcategories/addcategories";
 import Addproduct from "./addcategories/addproducts/addproduct";
+import Editproduct from "./addcategories/editproducts/editproduct";
 const Orderdetails = () => {
   const ctx = useContext(ModalContext);
-
+  console.log("is deit is ", ctx.isEdit);
   const handleclick = () => {
     ctx.closepage();
   };
@@ -37,9 +38,9 @@ const Orderdetails = () => {
           <Addbanner />
         ) : ctx.isproduct ? (
           <Addproduct />
-        ) : (
-          <Detailspage />
-        )}
+        ) : ctx.isEdit ? (
+          <Editproduct />
+        ) : null}
       </div>
     </div>
   );

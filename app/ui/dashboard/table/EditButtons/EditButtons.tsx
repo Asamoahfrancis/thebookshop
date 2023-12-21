@@ -1,20 +1,23 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
-const EditButtons = () => {
+import { useContext } from "react";
+import { ProductContext } from "@/app/context/ProductsContext/ProductContext";
+import { ModalContext } from "@/app/context/use-modal-visibility/usemodal";
+const EditButtons: FC<{ Pid: string | undefined }> = ({ Pid }) => {
+  const ctx = useContext(ProductContext);
+  const ctx_one = useContext(ModalContext);
+
+  const handlerClick = (e: any) => {
+    ctx_one.closepage();
+    ctx_one.editproduct();
+  };
   return (
     <div className="flex items-center justify-center gap-2 ">
-      <button className="  bg-white text-white p-1 rounded-md">
-        <div>
-          <Image
-            src="/gridting.png"
-            alt="Picture of the author"
-            width={24}
-            height={24}
-            style={{ zIndex: "-100" }}
-          />
-        </div>
-      </button>
-      <button className=" bg-white text-white p-1 rounded-md">
+      <button className="  bg-white text-white p-1 rounded-md"></button>
+      <button
+        className=" bg-white text-white p-1 rounded-md"
+        onClick={handlerClick}
+      >
         <div>
           <Image
             src="/edit.png"
@@ -24,7 +27,10 @@ const EditButtons = () => {
           />
         </div>
       </button>
-      <button className="  bg-white text-white p-1 rounded-md">
+      <button
+        className="  bg-white text-white p-1 rounded-md"
+        onClick={(e) => ctx.removeProduct(Pid)}
+      >
         <div>
           <Image
             src="/trash.png"

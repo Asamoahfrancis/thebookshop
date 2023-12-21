@@ -1,7 +1,9 @@
 "use client";
 import React, { ReactNode, useState, useReducer } from "react";
-import { Categories } from "@/app/ui/dashboard/orderdetails/addcategories/addcategories";
 import { myOrder } from "@/app/data/orders";
+import { Categories } from "@/app/data/categories";
+import { products } from "@/app/data/products";
+import { pid } from "process";
 type initialstateType = {
   StateCategory: { id: string; category: string }[];
 };
@@ -10,10 +12,12 @@ export const ProductContext = React.createContext({
   StateCategory: Categories,
   AddCategory: (cate: { id: string; category: string }) => {},
   Order: myOrder,
+  products: products,
   filterOrderId: "",
   selectSearch: "",
   Idfilter: (orderId: string) => {},
   Selectfilter: (filter: string) => {},
+  removeProduct: (pId: string | undefined) => {},
 });
 
 const ReducerFunction = (state: any, action: any) => {
@@ -25,19 +29,30 @@ const ReducerFunction = (state: any, action: any) => {
     };
   }
 
+  if (action.type == "Remove product") {
+    const newRemoveProducts = state.products.filter(
+      (product: any) => product.Pid !== action.payload
+    );
+
+    return {
+      ...state,
+      products: newRemoveProducts,
+    };
+  }
+
   return initialstate;
 };
 const initialstate = {
   StateCategory: Categories,
   Order: myOrder,
-  filter: "",
+  products: products,
 };
 export const ProductContextProvider = ({
   children,
 }: {
   children: ReactNode;
 }) => {
-  const [{ StateCategory, Order }, dispatchFunction] = useReducer(
+  const [{ StateCategory, Order, products }, dispatchFunction] = useReducer(
     ReducerFunction,
     initialstate
   );
@@ -56,6 +71,11 @@ export const ProductContextProvider = ({
     getSelectSearch(orderId);
   };
 
+  const removeProduct = (pId: string | undefined) => {
+    console.log(pId);
+    dispatchFunction({ type: "Remove product", payload: pId });
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -65,6 +85,8 @@ export const ProductContextProvider = ({
         selectSearch,
         filterOrderId,
         Order,
+        products,
+        removeProduct,
         Idfilter,
       }}
     >

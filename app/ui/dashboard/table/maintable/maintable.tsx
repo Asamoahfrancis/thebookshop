@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import MoblieTable from "./tabledata/mobileTable/MoblieTable";
 import { useContext } from "react";
 import { ProductContext } from "@/app/context/ProductsContext/ProductContext";
-import { products } from "@/app/data/products";
 
 const MainTable = () => {
   const ctx = useContext(ProductContext);
@@ -65,11 +64,11 @@ const MainTable = () => {
                   orderpic={d.orderpic}
                 />
               ))
-            : products.map((p) => (
+            : ctx.products.map((p) => (
                 <Tabledata
                   key={p.id}
                   index={p.id}
-                  date={p.date}
+                  Pid={p.Pid}
                   Product_Category={p.Product_Category}
                   Product_name={p.Product_name}
                   Cost={p.Cost}
@@ -81,7 +80,7 @@ const MainTable = () => {
       </table>
       <section className="md:hidden   grid grid-cols-1 sm:grid-cols-2  gap-4 ">
         {pathanme !== "/products"
-          ? ctx.Order.map((d) => (
+          ? filtered.map((d) => (
               <MoblieTable
                 key={d.id}
                 index={d.id}
@@ -96,11 +95,11 @@ const MainTable = () => {
                 orderpic={d.orderpic}
               />
             ))
-          : products.map((p) => (
+          : ctx.products.map((p) => (
               <MoblieTable
                 key={p.id}
                 index={p.id}
-                date={p.date}
+                Pid={p.Pid}
                 Product_Category={p.Product_Category}
                 Product_name={p.Product_name}
                 Cost={p.Cost}

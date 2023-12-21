@@ -67,7 +67,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/"
+              href="#"
               className=" py-2 px-3 rounded-md text-black hover:bg-[#7E7E7E21] hover:text-[#E9088C]"
             >
               Logout

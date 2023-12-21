@@ -5,3 +5,9 @@
 .minwidth {
   @apply w-[90%];
 }
+
+.divDrag:hover,
+.divDrag.dragover {
+  opacity: 0.6;
+  padding: 60px;
+}

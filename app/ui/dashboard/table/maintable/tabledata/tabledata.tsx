@@ -8,6 +8,7 @@ import EditButtons from "../../EditButtons/EditButtons";
 type tablerowType = {
   index?: string;
   date?: string;
+  Pid?: string | undefined;
   orderId?: string;
   customer?: string;
   phone?: string;
@@ -25,6 +26,7 @@ type tablerowType = {
 const Tabledata = ({
   index,
   date,
+  Pid,
   orderId,
   customer,
   phone,
@@ -42,6 +44,9 @@ const Tabledata = ({
   const ctx = useContext(ModalContext);
 
   const onhandlertable = () => {
+    if (pathname === "/products") {
+      return;
+    }
     ctx.closepage();
     ctx.oderdetails();
   };
@@ -54,7 +59,7 @@ const Tabledata = ({
         <td>
           <p className="p-4">{index}</p>
         </td>
-        <td>{date}</td>
+        <td>{pathname !== "/products" ? date : Pid}</td>
         {pathname !== "/products" ? (
           <td>{orderId}</td>
         ) : (
@@ -80,7 +85,7 @@ const Tabledata = ({
 
         <td className=" text-center">
           {pathname === "/products" ? (
-            <EditButtons />
+            <EditButtons Pid={Pid} />
           ) : (
             <p
               className=" rounded-md px-3 py-2"

@@ -1,21 +1,9 @@
+"use client";
 import React, { useState } from "react";
 import Editcategories from "./editcatigories/editcategories";
 import { useContext } from "react";
 import { ProductContext } from "@/app/context/ProductsContext/ProductContext";
-export const Categories = [
-  {
-    id: "c1",
-    category: "Men",
-  },
-  {
-    id: "c2",
-    category: "Women",
-  },
-  {
-    id: "c3",
-    category: "Kids",
-  },
-];
+
 const Addcategories = () => {
   const [getContextData, setgetContextData] = useState("");
 
